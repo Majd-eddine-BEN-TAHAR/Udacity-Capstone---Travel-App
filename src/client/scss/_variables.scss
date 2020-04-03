@@ -1,0 +1,48 @@
+$main-color:#009efb; // => this is a variable
+
+$border-default: 2px solid blue; //=> a list
+
+$colors:(violet: #6a11cb, // => a map
+    indigo: #6610f2,
+    purple: #6f42c1,
+    blue: #009efb,
+    blue2: #007bff,
+
+    squeaky: #63cdda,
+    whiteBlue: #accbee,
+    aquaBLue: #38f9d7,
+    cyanBlue: #17a2b8,
+    text-color: #455a64,
+
+    beige: #ffeead,
+    yellow: #ffcc5c,
+    yellow2: #ffc107,
+    orange: #ff9800,
+    orange2: #fd7e14,
+
+    peache: #f3a683,
+    deepRose: #c44569,
+    red: #dc3545,
+    red2: #ff6f69,
+    pink: #e83e8c,
+
+    green: #4CAF50,
+    green2: #28a745,
+    limeSoap: #7bed9f,
+    green-blue: #1abc9c,
+    teal1: #1abc9c,
+
+    gray: #e7e7e7,
+    gray2: #6c757d,
+    gray-dark: #343a40,
+    white: #fff,
+
+    dark: #343a40,
+    primary: #1abc9c,
+    secondary: #2c3e50,
+    success: #28a745,
+    info: #17a2b8,
+    warning: #ffc107,
+    danger: #dc3545,
+    light: #f8f9fa); //=> to get color from map 
+//                use map-get($mapName,mapProprety)

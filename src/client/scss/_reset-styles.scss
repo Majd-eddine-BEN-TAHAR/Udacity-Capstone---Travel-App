@@ -1,0 +1,75 @@
+@import "_variables";
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: "Oxanium", cursive;
+  font-weight: 400;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  color: map-get($colors, text-color);
+}
+
+a {
+  text-decoration: none;
+  color: map-get($colors, blue);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  white-space: pre-line;
+}
+
+h1 {
+  line-height: 4rem;
+  font-size: 3.2rem;
+}
+
+h2 {
+  line-height: 3.6rem;
+  font-size: 2.2rem;
+}
+
+h3 {
+  line-height: 3rem;
+  font-size: 1.9rem;
+}
+
+h4 {
+  line-height: 2.2rem;
+  font-size: 1.6rem;
+}
+
+h5 {
+  line-height: 1.8rem;
+  font-size: 1.4rem;
+}
+
+h6 {
+  line-height: 1.6rem;
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1.6rem;
+  margin: 1.6rem 0;
+  text-align: justify;
+  white-space: pre-line;
+}
