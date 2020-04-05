@@ -12,11 +12,11 @@ module.exports = {
   entry: "./src/client/index.js",
   output: {
     filename: "app.bundle.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
   },
   mode: "production",
   optimization: {
-    minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})]
+    minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   devtool: "cheap-source-map",
   module: {
@@ -24,7 +24,7 @@ module.exports = {
       {
         test: "/.js$/",
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
       },
       {
         test: /\.scss$/,
@@ -32,26 +32,37 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
-          "sass-loader"
-        ]
-      }
-    ]
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 10000, // Convert images < 8kb to base64 strings
+              name: "[hash]-[name].[ext]",
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin({
       dry: true,
       verbose: true,
       cleanStaleWebpackAssets: true,
-      protectWebpackAssets: false
+      protectWebpackAssets: false,
     }),
     new HtmlWebPackPlugin({
       hash: true,
       template: "./src/client/views/index.html",
       filename: "index.html",
-      path: path.resolve(__dirname, "dist")
+      path: path.resolve(__dirname, "dist"),
     }),
     new MiniCssExtractPlugin({ filename: "main.bundle.css" }),
-    new CopyWebpackPlugin([{ from: "./src/client/images", to: "./images" }]),
-    new WorkboxPlugin.GenerateSW({})
-  ]
+    new WorkboxPlugin.GenerateSW({}),
+  ],
 };

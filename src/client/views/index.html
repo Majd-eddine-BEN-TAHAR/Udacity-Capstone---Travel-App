@@ -3,9 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Travel App</title>
   </head>
   <body>
-    <p>© 2020 Majd Eddine BEN TAHAR</p>
+    <header class="header">
+      <h1 class="headerPara">travel app</h1>
+    </header>
+    <main>
+      <div class="backdrop">
+        <div class="modal">
+          <p class="warning"></p>
+          <button class="ok">ok</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <section class="form-section">
+          <form action="#" class="form">
+            <label for="destintaion">destintaion</label>
+            <input
+              type="text"
+              class="destination"
+              placeholder="enter a destination"
+            />
+            <label for="">departing</label>
+            <input type="date" class="depart" />
+            <label for="returning">returning</label>
+            <input type="date" class="returning" />
+            <button class="submit">submit</button>
+          </form>
+        </section>
+
+        <div class="spinner"></div>
+        <section class="temp-img-section">
+          <img src="" class="img" alt="" />
+          <div class="description">
+            <h2 class="trip"></h2>
+            <h2 class="going"></h2>
+            <h2 class="back"></h2>
+            <h2 class="temperature"></h2>
+            <h2 class="weather"></h2>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2020 Majd Eddine BEN TAHAR</p>
+    </footer>
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
   </body>
 </html>

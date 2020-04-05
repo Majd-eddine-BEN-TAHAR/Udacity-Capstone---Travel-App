@@ -1,4 +1,3 @@
-// git push -u origin master
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
@@ -14,7 +13,7 @@ module.exports = {
       {
         test: "/.js$/",
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
       },
       {
         test: /\.scss$/,
@@ -22,18 +21,29 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
-          "sass-loader"
-        ]
-      }
-    ]
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 10000, // Convert images < 8kb to base64 strings
+              name: "[hash]-[name].[ext]",
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
       hash: true,
       template: "./src/client/views/index.html",
-      filename: "./index.html"
+      filename: "./index.html",
     }),
     new MiniCssExtractPlugin({ filename: "main.bundle.css" }),
-    new CopyWebpackPlugin([{ from: "./src/client/images", to: "./images" }])
-  ]
+  ],
 };

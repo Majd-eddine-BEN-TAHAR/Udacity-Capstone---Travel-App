@@ -20,6 +20,7 @@ body {
   width: 100%;
   min-height: 100vh;
   color: map-get($colors, text-color);
+  background-image: url("./../images/backgroud.jpg");
 }
 
 a {

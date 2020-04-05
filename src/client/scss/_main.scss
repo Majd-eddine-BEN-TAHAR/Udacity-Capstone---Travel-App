@@ -1,0 +1,139 @@
+main {
+  height: 80vh;
+}
+.container {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.showBackdrop {
+  display: flex;
+}
+
+.modal {
+  width: 90%;
+  max-width: 600px;
+  height: 300px;
+  background-image: linear-gradient(
+    120deg,
+    rgba(132, 250, 176, 0.6) 0%,
+    rgba(144, 211, 244, 0.8) 100%
+  );
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.warning {
+  color: black;
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: capitalize;
+  padding: 2rem;
+  text-align: center;
+}
+.ok {
+  width: 100px;
+  padding: 10px 0;
+  background-color: dodgerblue;
+  color: white;
+  text-transform: uppercase;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.ok:hover {
+  background-color: rgb(101, 173, 245);
+}
+.title {
+  text-align: center;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.form {
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-size: 25px;
+  color: white;
+}
+.spinner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid dodgerblue;
+  // text-align: center;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 10px solid transparent;
+  animation: spinner 400ms infinite linear;
+  display: none;
+}
+@keyframes spinner {
+  form {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+::placeholder {
+  text-transform: capitalize;
+}
+.submit {
+  width: 100%;
+  max-width: 150px;
+  margin: 20px auto;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: 3px solid white;
+  color: white;
+  text-transform: capitalize;
+  background-color: dodgerblue;
+  cursor: pointer;
+}
+.submit:hover {
+  background-color: rgb(106, 167, 228);
+}
+.temp-img-section {
+  width: 90%;
+  max-width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  overflow-y: auto;
+  text-align: left;
+}
+.description {
+  margin-left: 20px;
+  color: rgb(20, 20, 155);
+}
+.img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  border: none;
+  outline: none;
+}
