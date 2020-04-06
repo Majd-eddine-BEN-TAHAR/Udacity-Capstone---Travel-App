@@ -2,8 +2,9 @@
 
 My custom travel app helps you plan your trips. Simply enter the desired trip location &amp; date; My Custom Travel App will display the current weather or weather forecast depending on the trip date and an image of the location using information obtained from external APIs.
 
+## Extand Project 
+Pull in an image for the country from Pixabay API when the entered location brings up no results.
 ​
-
 ## Get Up and Running
 
 Fork this repo, then clone it down to your computer or download it:
