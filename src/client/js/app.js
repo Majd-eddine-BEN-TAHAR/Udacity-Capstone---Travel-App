@@ -20,6 +20,7 @@ let dataTosend = {};
 
 export function getData() {
   if (validateInputs()) {
+    spinner.style.display = "block";
     const todayDate = (new Date().getTime() / 1000).toFixed();
     const sevenDaysInSeconds = 24 * 60 * 60 * 7;
     const departing = (new Date(depart.value).getTime() / 1000).toFixed();
@@ -32,7 +33,6 @@ export function getData() {
         departing: todayDate,
         // returning: (new Date(returning.value).getTime() / 1000).toFixed(),
       };
-      spinner.style.display = "block";
       sendRequest(postUrl, dataTosend)
         .then((res) => {
           spinner.style.display = "none";
@@ -58,13 +58,13 @@ export function getData() {
           warningText.innerText = error.message;
         });
     } else {
+      spinner.style.display = "block";
       // else the trip is in the future
       dataTosend = {
         destination: destination.value,
         departing: departing,
         // returning: (new Date(returning.value).getTime() / 1000).toFixed(),
       };
-      spinner.style.display = "block";
       sendRequest(postUrl, dataTosend)
         .then((res) => {
           spinner.style.display = "none";

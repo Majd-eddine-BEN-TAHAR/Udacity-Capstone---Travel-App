@@ -10,33 +10,39 @@ Fork this repo, then clone it down to your computer or download it:
 
 - cd into your new folder and type:
 
-```
-npm install
-```
+  ```
+  npm install
+  ```
 
 - To generate a dist folder for production type:
 
-```
-npm run build-prod
-```
+  ```
+  npm run build-prod
+  ```
+
+- To lunch the server type :
+
+  ```
+  npm run launch-server
+  ```
 
 - To start the development server type:
 
-```
-npm run build-dev
-```
+  ```
+  npm run build-dev
+  ```
 
 - To start the express server with production on localhost:8085 type :
 
-```
-npm start
-```
+  ```
+  npm start
+  ```
 
 - To run tests with Jest type:
 
-```
-npm test
-```
+  ```
+  npm test
+  ```
 
 ## API(s) Used
 
